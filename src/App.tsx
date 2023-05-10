@@ -29,12 +29,24 @@ const Stack = createNativeStackNavigator();
 
 function App() {
 
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Products' component={Products} />
-        <Stack.Screen name='Detail' component={Detail} />
+        <Stack.Screen
+          name='Products'
+          component={Products}
+          options={{
+            title: 'Dükkan',
+            headerStyle: { backgroundColor: '#64b5f6' },
+            headerTitleStyle: { color: 'white' },
+          }} />
+        <Stack.Screen name='Detail' component={Detail}
+          options={{
+            title: 'Detay',
+            headerStyle: { backgroundColor: '#64b5f6' },
+            headerTitleStyle: { color: 'white' },
+            headerTintColor: 'white',
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
