@@ -10,14 +10,15 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 
 
-function Products() {
+function Products({ navigation }) {
 
     const { loading, data, error } = useFetch(Config.API_URL);
-    console.log("render");
-    console.log({ loading, data: data.length, error });
-    console.log("-----------")
 
-    const renderProduct = ({ item }) => <ProductCard product={item} />;
+    handleProductSelect = () => {
+        navigation.navigate('Detail');
+    }
+
+    const renderProduct = ({ item }) => <ProductCard product={item} onSelect={handleProductSelect} />;
 
 
 
@@ -28,9 +29,9 @@ function Products() {
     }
 
     return (
-        <SafeAreaView>
-            <FlatList data={data} renderItem={renderProduct} />
-        </SafeAreaView>
+
+        <FlatList data={data} renderItem={renderProduct} />
+
     )
 }
 
