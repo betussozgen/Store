@@ -14,11 +14,11 @@ function Products({ navigation }) {
 
     const { loading, data, error } = useFetch(Config.API_URL);
 
-    handleProductSelect = () => {
-        navigation.navigate('Detail');
+    handleProductSelect = id => {
+        navigation.navigate('Detail', { id });
     }
 
-    const renderProduct = ({ item }) => <ProductCard product={item} onSelect={handleProductSelect} />;
+    const renderProduct = ({ item }) => <ProductCard product={item} onSelect={() => handleProductSelect(item.id)} />;
 
 
 
