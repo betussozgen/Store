@@ -10,11 +10,9 @@ import Button from "../../components/Button/Button";
 
 const validationSchema = Yup.object({
     username: Yup.string()
-        .max(15, 'Must be 15 characters or less')
         .required('Zorunlu Alan'),
     password: Yup.string()
-        .min(8, 'Must be 8 characters or less')
-        .required('Required'),
+        .required('Zorunlu Alan'),
 
 })
 
@@ -42,12 +40,12 @@ const Login = () => {
                             placeholder="Kullanıcı adını giriniz..."
                             value={values.username}
                             onType={handleChange('username')} />
-                        {errors.username && <Text style={{ fontSize: 10, color: 'red', padding: 10, }}>{errors.username}</Text>}
+                        {errors.username && <Text style={{ fontSize: 12, color: '#2286c3', fontWeight: 'bold', padding: 10, }}>{errors.username}</Text>}
                         <Input
                             placeholder="Şifrenizi giriniz..."
                             value={values.password}
                             onType={handleChange('password')} />
-                        {errors.password && Alert.alert(errors.password)}
+                        {errors.password && <Text style={{ fontSize: 12, color: '#2286c3', fontWeight: 'bold', padding: 10, }}>{errors.password}</Text>}
                         <Button text="Giriş Yap"
                             onPress={handleSubmit} />
                     </View>
