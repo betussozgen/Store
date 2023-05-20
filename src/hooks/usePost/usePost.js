@@ -9,7 +9,7 @@ function usePost() {
     const post = async (url, apiData) => {
         try {
             setLoading(true);
-            const { data, responseData } = await axios.post(url, apiData);
+            const { data: responseData } = await axios.post(url, apiData);
             setData(responseData);
             setLoading(false);
         } catch (err) {

@@ -25,17 +25,20 @@ const Login = ({ navigation }) => {
     function handleLogin(values) {
         post(Config.API_AUTH_URL + '/login', values);
     }
+
     if (error) {
-        Alert.alert('Dükkan', ' Bir hata oluştu!!');
+        Alert.alert('Dükkan', 'Bir hata oluştu!!');
     }
+
     if (data) {
-        if (data.status === "Error") {
-            Alert.alert('Dükkan', ' Kullanıcı bulunamadı!');
+        if (data.status === 'Error') {
+            Alert.alert('Dükkan', 'Kullanıcı bulunamadı!');
         } else {
             navigation.navigate('Products')
         }
-        console.log(data);
+        //console.log(data);
     }
+    // console.log(data);
 
     // console.log('RENDER');
     return (
