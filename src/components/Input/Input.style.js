@@ -2,12 +2,13 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        padding: 3,
+        padding: 5,
         margin: 10,
         backgroundColor: 'white',
         borderRadius: 5,
+        flexDirection: 'row',
     },
-    logo_container: {},
-    body_container: {},
-
+    input: {
+        flex: 1,
+    },
 })
