@@ -1,8 +1,8 @@
 import React from "react";
-import { SafeAreaView, Text, FlatList, ActivityIndicator } from 'react-native';
+import { FlatList, Button, View } from 'react-native';
 
 import Config from "react-native-config";
-
+import { useDispatch } from "react-redux";
 
 import ProductCard from '../../components/ProductCard';
 import useFetch from "../../hooks/useFetch/useFetch";
@@ -11,6 +11,7 @@ import Error from "../../components/Error/Error";
 
 
 function Products({ navigation }) {
+    const dispatch = useDispatch();
 
     const { loading, data, error } = useFetch(Config.API_PRODUCT_URL);
 
@@ -30,7 +31,12 @@ function Products({ navigation }) {
 
     return (
 
-        <FlatList data={data} renderItem={renderProduct} />
+        <View>
+            <Button title="LogOut" onPress={() => dispatch({ type: 'SET_USER', payload: { user: null } })} />
+            <FlatList data={data} renderItem={renderProduct} />
+
+        </View>
+
 
     )
 }
