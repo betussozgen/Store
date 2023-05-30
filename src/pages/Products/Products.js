@@ -34,13 +34,8 @@ function Products({ navigation }) {
 
         <View>
 
-            <Text>Hello: {user.name.firstname}</Text>
-
-
-
+            <Text style={{ fontSize: 20, color: 'black', fontWeight: 'bold', margin: 10 }}>Hello: {user.name.firstname}</Text>
             < FlatList data={data} renderItem={renderProduct} />
-
-
         </View>
 
 
